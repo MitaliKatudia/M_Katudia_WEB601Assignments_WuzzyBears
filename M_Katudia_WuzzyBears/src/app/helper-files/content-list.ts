@@ -7,28 +7,26 @@ export class ContentList {
     this._items = [];
   }
 
-  get contentsList() {
+  getItems(): Content[] {
     return this._items;
   }
 
-  add(content: Content) {
-    return this._items.push(content);
+  addFunction(contentItem: Content) {
+    return this._items.push(contentItem);
   }
 
-  count() {
+  getLength() {
     return this._items.length;
   }
 
-  getContentDetails(index: number) {
-    let content = this._items[index];
-    return `
-        <div>
-        <h1>Title: ${content.title}</h1>
-        <p>description: ${content.description}</p>
-        <img src="${content.imgURL}">
-        <p>creator: ${content.creator}</p>
-        <p>Type: ${content.type}</p>
-        <p>Tags: ${content.tags}</p>
-        </div><br>`;
+  printIndex(index: number): string {
+    let readerFriendlyHtml = `<div>`;
+    readerFriendlyHtml += `<p>` + this._items[index].title + `<p>`;
+    readerFriendlyHtml += `<p>` + this._items[index].description + `<p>`;
+    readerFriendlyHtml += `<p>` + this._items[index].type + `<p>`;
+    readerFriendlyHtml += `<p>` + this._items[index].creator + `<p>`;
+    readerFriendlyHtml += `<img src ="` + this._items[index].imgURL + `">`;
+    readerFriendlyHtml += `</div>`;
+    return readerFriendlyHtml;
   }
 }
