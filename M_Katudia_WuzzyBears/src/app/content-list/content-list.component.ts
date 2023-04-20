@@ -20,7 +20,7 @@ export class ContentListComponent {
         description: 'Soft bears are very silky',
         creator: 'M.K Raval',
         imgURL: 'https://media.istockphoto.com/id/909772478/photo/brown-teddy-bear-isolated-in-front-of-a-white-background.jpg?s=612x612&w=0&k=20&c=F4252bOrMfRTB8kWm2oM2jlb9JXY08tKCaO5G_ms1Uw=',
-        type: 'Soft',
+        type: 'Fantasy',
         tags: ['Tag 1', 'Tag 2'],
       },
       {
@@ -38,7 +38,7 @@ export class ContentListComponent {
         description: 'This is a complete pack wool',
         creator: 'R Chalthanwala',
         imgURL: 'https://media.istockphoto.com/id/1203062063/photo/the-soft-toy-bunny-sits-on-a-bright-background.jpg?s=612x612&w=0&k=20&c=rcaQ6-4tFnqqAnIOt3Bn5HgXP7sFz0j8bTQ7DwMzXyg=',
-        type: 'Scraper',
+        type: 'Silk',
         tags: ['Tag 5', 'Tag 6'],
       },
       {
@@ -56,7 +56,7 @@ export class ContentListComponent {
         description: 'A man can be any toy with the blush on it',
         creator: 'Nishi K',
         imgURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcYSMKO6HKT3MGROe5oOmSDq-bv1vjp1wg9A&usqp=CAU',
-        type: 'Replay',
+        type: 'Silk',
         tags: ['Tag 1.1', 'Tag 4.5'],
       },
       {
