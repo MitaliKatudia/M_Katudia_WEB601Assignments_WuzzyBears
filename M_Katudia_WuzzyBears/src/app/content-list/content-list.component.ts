@@ -54,7 +54,7 @@ export class ContentListComponent {
         id: 5,
         title: 'Ant man',
         description: 'A man can be any toy with the blush on it',
-        creator: 'pratik',
+        creator: 'Nishi K',
         imgURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcYSMKO6HKT3MGROe5oOmSDq-bv1vjp1wg9A&usqp=CAU',
         type: 'Replay',
         tags: ['Tag 1.1', 'Tag 4.5'],
@@ -67,7 +67,41 @@ export class ContentListComponent {
         imgURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXS9qWmy5I45kkpxavNzcXkWHioDCgZS61Dw&usqp=CAU',
         type: 'Fantacy',
         tags: ['Tag 1.9', 'Tag 12'],
+      },
+      {
+        id: 7,
+        title: 'Teddy Teedy',
+        description: 'A group of teddies to play with.',
+        creator: 'Joe Russo',
+        imgURL: 'https://www.dreamstime.com/havanese-four-teddy-bears-sitting-sisal-box-havanese-puppy-cuddling-four-teddy-bears-sit-together-sisal-box-image169682799',
+        type: '',
+        tags: ['Tag 3.1', 'Tag 1.2'],
+      },
+      {
+        id: 8,
+        title: 'Zexon',
+        description: 'Cute new teddy bears trying to support and cheer.',
+        creator: 'Dinesh Katudia',
+        imgURL: 'https://www.dreamstime.com/four-teddy-bears-window-rotterdam-netherlands-april-dutch-flags-placed-bear-hunt-to-entertain-children-image182255913',
+        type: '',
+        tags: ['Tag 2.1', 'Tag 1.2'],
       }
     ];
+  }
+
+  searchTerm = '';
+  searchResults: Content[] = [];
+  searchExists = false;
+
+  checkExistence() {
+    /*
+    if (this.searchTerm.trim() === '')
+    {
+      this.searchExists = false;
+      return;
+    }
+    */
+    this.searchResults = this.contentArray.filter(item => item.title.toLowerCase().includes(this.searchTerm.toLowerCase()));
+    this.searchExists = this.searchResults.length > 0;
   }
 }
