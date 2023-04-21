@@ -28,7 +28,7 @@ export class WuzzyBearsService {
   }
 
   getTeddyById(id: number): Observable<any> {
-    const teddy = contents.find(content => content.id === id);
+    const teddy = this.http.get<Content>(`api/teddys/${id}`);
 
     if (teddy) {
       this.MessageService.add(`Content Item at id: ${id}`);

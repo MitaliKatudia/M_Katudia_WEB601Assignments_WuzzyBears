@@ -10,20 +10,20 @@ import { WuzzyBearsService } from './services/wuzzybears.service';
 })
 export class AppComponent {
   title = 'Wuzzy Bears Factory';
-  teddyId: number = 4;
-  oneTeddyById: any = {};
+  /*teddyId: number = 4;
+  oneTeddyById: any = {};*/
 
   constructor(private WuzzyBearsService: WuzzyBearsService) { }
 
   ngOnInit() {
-    this.findTeddyById();
+    /*this.findTeddyById();*/
   }
 
-  findTeddyById() {
+  /*findTeddyById() {
     this.WuzzyBearsService.getTeddyById(this.teddyId).subscribe(result => {
       if (typeof result === "object") {
         this.oneTeddyById = result;
       }
     });
-  }
+  }*/
 }

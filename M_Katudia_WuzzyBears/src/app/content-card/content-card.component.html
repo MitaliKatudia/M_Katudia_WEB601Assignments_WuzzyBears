@@ -13,11 +13,12 @@
     </mat-card-header>
 
    
-      <mat-card-content class="card-body">
-        <h2>{{teddy.title}}</h2>
-        <p>{{teddy.description}}</p>
-        <p><strong>Creator:</strong> {{teddy.creator}}</p>
-      </mat-card-content>
+    <mat-card-content class="card-body">
+      <!--<h2>{{teddy.title}}</h2>
+  <p>{{teddy.description}}</p>-->
+      <h2><a routerLink="/contents/{{teddy.id}}">{{teddy.title}}</a></h2>
+      <p><strong>Creator:</strong> {{teddy.creator}}</p>
+    </mat-card-content>
 
       <mat-card-footer>
         <h2>{{teddy.title}}</h2>
