@@ -10,7 +10,7 @@ export class ModifyContentComponent {
   newTeddy: any = {};
   @Output() addTeddyEvent = new EventEmitter<Content>();
 
-  addNewBike() {
+  addNewTeddy() {
     this.addTeddyEvent.emit(this.newTeddy);
     this.newTeddy = {};
   }
