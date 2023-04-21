@@ -10,6 +10,10 @@ import { MessageComponent } from './message/message.component';
 import { ContentList } from './helper-files/content-list';
 import { ContentTypePipe } from './content-type.pipe';
 import { ContentCardComponent } from './content-card/content-card.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './services/in-memory-data.service';
+import { ModifyContentComponent } from './modify-content/modify-content.component';
 
 @NgModule({
   declarations: [
@@ -19,11 +23,17 @@ import { ContentCardComponent } from './content-card/content-card.component';
     ContentTypePipe,
     HoverAffectDirective,
     MessageComponent,
-    ContentCardComponent
+    ContentCardComponent,
+    ModifyContentComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
+      dataEncapsulation: false,
+      delay: 1000
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

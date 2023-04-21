@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Content } from '../helper-files/content-interface';
 import { contents } from '../helper-files/ContentDb';
 import { MessageService } from './message.service';
@@ -9,12 +10,12 @@ import { MessageService } from './message.service';
 })
 export class WuzzyBearsService {
 
-  constructor(private MessageService: MessageService) { }
+  constructor(private http: HttpClient, private MessageService: MessageService) { }
 
   getTeddys(): Observable<Content[]> {
     const teddys = contents;
     this.MessageService.add("Content array loaded!");
-    return of(teddys);
+    return this.http.get<Content[]>("/api/teddys");
   }
 
   getTeddyById(id: number): Observable<any> {
