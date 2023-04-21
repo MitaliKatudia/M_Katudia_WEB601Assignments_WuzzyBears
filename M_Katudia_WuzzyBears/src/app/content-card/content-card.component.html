@@ -1,11 +1,11 @@
-<div [id]="bike.id" [ngClass]="['card', class]" appHoverAffect="border">
+<div [id]="teddy.id" [ngClass]="['card', class]" appHoverAffect="border">
 
   <div class="card-img">
     <div *ngIf="teddy.imgURL; else defaultImage">
-      <img [src]="teddy.imgURL" alt={{teddy.title}} (click)="handleClick(bike)">
+      <img [src]="teddy.imgURL" alt={{teddy.title}} (click)="handleClick(teddy)">
     </div>
     <ng-template #defaultImage>
-      <img [src]="defaultBike" alt={{teddy.title}} (click)="handleClick(bike)">
+      <img [src]="teddy.imgURL" alt={{teddy.title}} (click)="handleClick(teddy)">
     </ng-template>
   </div>
 

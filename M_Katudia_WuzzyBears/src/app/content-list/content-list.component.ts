@@ -11,7 +11,7 @@ export class ContentListComponent {
   contents: Content[] = [];
   searchTitle: string = "";
   titleFound: boolean | null = null;
-  defaultBike: string = '/assets/images/drawBike.jpg';
+  defaultTeddy: string = 'No Image';
 
 
   constructor(private WuzzyBearsService: WuzzyBearsService) {

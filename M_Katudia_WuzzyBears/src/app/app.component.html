@@ -1,13 +1,13 @@
-<section class="bikeById-sec">
+<section class="teddyById-sec">
   <div class="idForm">
-    <form (submit)="findBikeById()">
-      <label for="bikeId">Enter an ID:</label> <br>
-      <input type="number" min="0" id="bikeId" name="bikeId" [(ngModel)]="bikeId" placeholder="Enter an id">
-      <button>Get Bike</button>
+    <form (submit)="findTeddyById()">
+      <label for="teddyId">Enter an ID:</label> <br>
+      <input type="number" min="0" id="teddyId" name="teddyId" [(ngModel)]="teddyId" placeholder="Enter an id">
+      <button>Get your Teddy Bear</button>
     </form>
   </div>
   <div class="oneCard">
-    <app-content-card [bike]="oneBikeById" [class]="'oneBike'"></app-content-card>
+    <app-content-card [teddy]="oneTeddyById" [class]="'oneTeddy'"></app-content-card>
   </div>
 </section>
 

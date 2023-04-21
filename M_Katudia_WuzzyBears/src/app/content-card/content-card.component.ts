@@ -9,7 +9,7 @@ import { Content } from '../helper-files/content-interface';
 export class ContentCardComponent {
   @Input() teddy: any;
   @Input() class: string = '';
-  defaultBike: string = '';
+  defaultTeddy: string = '';
 
   handleClick(content: Content) {
     console.log(`ID: ${content.id}, Title: ${content.title}`);

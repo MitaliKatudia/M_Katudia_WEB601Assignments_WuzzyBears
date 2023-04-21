@@ -20,7 +20,7 @@ export class AppComponent {
   }
 
   findBikeById() {
-    this.WuzzyBearsService.getBikeById(this.teddyId).subscribe(result => {
+    this.WuzzyBearsService.getTeddyById(this.teddyId).subscribe(result => {
       if (typeof result === "object") {
         this.oneTeddyById = result;
       }
