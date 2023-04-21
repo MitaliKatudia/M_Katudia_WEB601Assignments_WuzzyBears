@@ -16,6 +16,8 @@ import { InMemoryDataService } from './services/in-memory-data.service';
 import { ModifyContentComponent } from './modify-content/modify-content.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { AddContentDialogComponent } from './add-content-dialog/add-content-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -26,14 +28,16 @@ import { MatButtonModule } from '@angular/material/button';
     HoverAffectDirective,
     MessageComponent,
     ContentCardComponent,
-    ModifyContentComponent
+    ModifyContentComponent,
+    AddContentDialogComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     MatInputModule,
-    MatButtonModule,s
+    MatButtonModule,
+    MatDialogModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false,
       delay: 1000
