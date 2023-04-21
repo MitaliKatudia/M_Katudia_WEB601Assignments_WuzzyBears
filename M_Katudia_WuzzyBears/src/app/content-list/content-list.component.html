@@ -1,8 +1,8 @@
-<p>Content-list works!</p>
+<p>content-list works!</p>
 
 <p>WuzzyBears Teddies</p>
 
-<h1 style="padding: 20px; margin: 20px; background-color: palevioletred; color: white;">
+<h1 style="padding: 20px; margin: 20px; background-color: palevioletred; color: aliceblue;">
   Search Form
 
   <br />
@@ -16,7 +16,6 @@
     <input type="text" [(ngModel)]="searchTerm" placeholder="Search By Title">
     &nbsp;
     <button (click)="checkExistence()"> Search </button>
-    <!--<p *ngIf="searchTerm && searchResults.length === 0" class="search-message red">No results found.</p>-->
     <p *ngIf="(searchResults.length === 0 || searchResults.length < 0)" class="search-message red" style="color: red; font-weight: bold; font-size: 30px;">No results found.</p>
     <p *ngIf="searchTerm && searchResults.length > 0" class="search-message green" style="color: green; font-weight: bold; font-size: 30px;">A content item with this title exists.</p>
   </div>
@@ -25,10 +24,149 @@
     <li *ngFor="let item of searchResults">{{ item.title }}</li>
   </ul>
 </h1>
+<br />
+<br />
+<br />
+
+<h1 appHoverAffect="underline" style="padding: 20px; padding-left:550px; margin: 20px; font-size:60px;
+  background-color: beige; color: blanchedalmond;">
+  Type : No Type
+</h1>
+
+<ul style="padding-left:300px">
+  <li style="list-style-type: none; font-family:'Times New Roman', Times, serif;"
+      *ngFor="let content of contentArray | contentList: ''">
+
+    <div class="content-card" style="width: 70%; padding: 10px; margin: 10px; border-radius: 10%;
+      text-align: center; background-color: beige; color: blanchedalmond; margin-bottom: 50px; ">
+
+      <h1 class="content-card-header" style="font-size:50px">
+        {{content.title}}
+      </h1>
+      <div class="content-card-body">
+
+        <!--<p><img src="{{ content.imgURL }}" alt="content image" style="width: 70%; border-radius: 10%;" /></p>-->
+        <p>
+          <img *ngIf="content.imgURL; else defaultURL" [src]="content.imgURL" alt="content image" style="width: 70%; border-radius: 10%;" />
+          <ng-template #defaultURL>
+            <img src="https://1.bp.blogspot.com/-6j0O7KLU44g/VycGES9Gr4I/AAAAAAAAAWY/IT8jC_2lDMQKuCFUrwMpudemZVYVDjeEwCLcB/s1600/country-wise-mobile-phones-import.png"
+                 alt="default image" style="width: 70%; border-radius: 10%;" />
+          </ng-template>
+        </p>
+
+        <p style="font-size:30px">{{ content.description }}</p>
+        <p style="font-size:30px"><strong>Creator:</strong> {{ content.creator }}</p>
+        <p style="font-size:30px" appHoverAffect="underline"><strong>Type:</strong> {{ content.type }}</p>
+        <p style="font-size:30px">
+          <strong>Tags:</strong>
+          <span *ngFor="let tag of content.tags" appHoverAffect="bold">&emsp;{{ tag }}</span>
+        </p>
+      </div>
+
+    </div>
+
+  </li>
+</ul>
+
+
+<br />
+<br />
+<hr />
+<br />
+<br />
+
+
+<h1 appHoverAffect="underline" style="padding: 20px; padding-left: 550px; margin: 20px; font-size: 60px;
+  background-color: beige; color: blanchedalmond; ">
+  Type : Action
+</h1>
+
+<ul style="padding-left:300px">
+  <li style="list-style-type: none; font-family:'Times New Roman', Times, serif"
+      *ngFor="let content of contentArray | contentList: 'ios'">
+
+    <div class="content-card" style="width: 70%; padding: 10px; margin: 10px; border-radius: 10%;
+      text-align: center; background-color: bisque; color: blueviolet; margin-bottom: 50px; ">
+
+      <h1 class="content-card-header" style="font-size:50px">
+        {{content.title}}
+      </h1>
+      <div class="content-card-body">
+
+        <!--<p><img src="{{ content.imgURL }}" alt="content image" style="width: 70%; border-radius: 10%;" /></p>-->
+        <p>
+          <img *ngIf="content.imgURL; else defaultURL" [src]="content.imgURL" alt="content image" style="width: 70%; border-radius: 10%;" />
+          <ng-template #defaultURL>
+            <img src="https://1.bp.blogspot.com/-6j0O7KLU44g/VycGES9Gr4I/AAAAAAAAAWY/IT8jC_2lDMQKuCFUrwMpudemZVYVDjeEwCLcB/s1600/country-wise-mobile-phones-import.png"
+                 alt="default image" style="width: 70%; border-radius: 10%;" />
+          </ng-template>
+        </p>
+
+        <p style="font-size:30px">{{ content.description }}</p>
+        <p style="font-size:30px"><strong>Creator:</strong> {{ content.creator }}</p>
+        <p style="font-size:30px" appHoverAffect="underline"><strong>Type:</strong> {{ content.type }}</p>
+        <p style="font-size:30px">
+          <strong>Tags:</strong>
+          <span *ngFor="let tag of content.tags" appHoverAffect="bold">&emsp;{{ tag }}</span>
+        </p>
+      </div>
+
+    </div>
+
+  </li>
+</ul>
+
+
+<br />
+<br />
+<hr />
+<br />
+<br />
+
+
+<h1 appHoverAffect="underline" style="padding: 20px; padding-left: 550px; margin: 20px; font-size: 60px;
+  background-color: silver; color: wheat; ">
+  Type: Fantacy
+</h1>
+
+<ul style="padding-left:300px">
+  <li style="list-style-type: none; font-family:'Times New Roman', Times, serif"
+      *ngFor="let content of contentArray | contentList: 'android'">
+
+    <div class="content-card" style="width: 70%; padding: 10px; margin: 10px; border-radius: 10%;
+      text-align: center; background-color: bisque; color: beige; margin-bottom: 50px; ">
+
+      <h1 class="content-card-header" style="font-size:50px">
+        {{content.title}}
+      </h1>
+      <div class="content-card-body">
+
+        <!--<p><img src="{{ content.imgURL }}" alt="content image" style="width: 70%; border-radius: 10%;" /></p>-->
+        <p>
+          <img *ngIf="content.imgURL; else defaultURL" [src]="content.imgURL" alt="content image" style="width: 70%; border-radius: 10%;" />
+          <ng-template #defaultURL>
+            <img src="https://1.bp.blogspot.com/-6j0O7KLU44g/VycGES9Gr4I/AAAAAAAAAWY/IT8jC_2lDMQKuCFUrwMpudemZVYVDjeEwCLcB/s1600/country-wise-mobile-phones-import.png"
+                 alt="default image" style="width: 70%; border-radius: 10%;" />
+          </ng-template>
+        </p>
+
+        <p style="font-size:30px">{{ content.description }}</p>
+        <p style="font-size:30px"><strong>Creator:</strong> {{ content.creator }}</p>
+        <p style="font-size:30px" appHoverAffect="underline"><strong>Type:</strong> {{ content.type }}</p>
+        <p style="font-size:30px">
+          <strong>Tags:</strong>
+          <span *ngFor="let tag of content.tags" appHoverAffect="bold">&emsp;{{ tag }}</span>
+        </p>
+      </div>
+
+    </div>
+
+  </li>
+</ul>
 
 
 
-<h1 style="padding: 20px; margin: 20px; background-color: antiquewhite; color: darkblue;"> Type : No Type </h1>
+<!--<h1 style="padding: 20px; margin: 20px; background-color: antiquewhite; color: darkblue;"> Type : No Type </h1>
 
 <ul>
   <li style="list-style-type: none; font-family:'Times New Roman', Times, serif;"
@@ -56,9 +194,9 @@
   </li>
 </ul>
 
-<h1 style="padding: 20px; margin: 20px; background-color: lightblue; color: darkblue; "> Type : Fantacy </h1>
+<h1 style="padding: 20px; margin: 20px; background-color: lightblue; color: darkblue; "> Type : Fantacy </h1>-->
 
-<ul>
+<!--<ul>
   <li style="list-style-type: none; font-family:'Times New Roman', Times, serif"
       *ngFor="let content of contentArray | contentList: 'Fantacy'">
 
@@ -110,10 +248,7 @@
     </div>
 
   </li>
-</ul>
-
-
-
+</ul>-->
 <!--<div *ngFor="let content of contentArray; let i = index"
      class="content-card" style="padding:30px; margin:30px; border-radius:30px;"
      [ngStyle]="{ border: i == 0 ? '2px solid black' : '1px solid gray' }">
