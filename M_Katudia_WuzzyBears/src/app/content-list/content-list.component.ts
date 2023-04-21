@@ -22,6 +22,12 @@ export class ContentListComponent {
     this.WuzzyBearsService.getTeddys().subscribe(teddys => this.contents = teddys);
   }
 
+  addNewTeddy(newTeddy: Content) {
+    this.WuzzyBearsService.addTeddy(newTeddy).subscribe(newTeddyFromServer => {
+      this.contents.push(newTeddyFromServer);
+      this.contents = [...this.contents];
+    });
+  }
 
   searchByTitle() {
     const teddyBears = this.contents.find(teddy => teddy.title.toLowerCase() === this.searchTitle.toLowerCase());

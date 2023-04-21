@@ -1,24 +1,22 @@
 <main>
 
   <h1 style="padding: 20px; margin: 20px; background-color: lavenderblush; color: darkblue;">
+
+    <app-modify-content (addBikeEvent)="addNewTeddy($event)"></app-modify-content>
     <section class="searchForTitle">
+
       <div>
-        <input type="text" [(ngModel)]="searchTitle" placeholder="Search Title here...">
+        <input type="text" [(ngModel)]="searchTitle" placeholder="Search Title">
         <button (click)="searchByTitle()">Search</button>
       </div>
-      
-        <div>
-          <input type="text" [(ngModel)]="searchTitle" placeholder="Search Title">
-          <button (click)="searchByTitle()">Search</button>
-        </div>
 
-        <div *ngIf="titleFound !== null">
-          <p [style.color]="titleFound ? 'green' : 'crimson'">
-            {{titleFound ? 'Teddy Bear Found' : 'Teddy Bear not found'}}
-          </p>
-        </div>
-      </section>
-      </h1>
+      <div *ngIf="titleFound !== null">
+        <p [style.color]="titleFound ? 'green' : 'crimson'">
+          {{titleFound ? 'Teddy Bear Found' : 'Teddy Bear not found'}}
+        </p>
+      </div>
+    </section>
+  </h1>
 
 
       <h1>Wuzzy Bears: No type</h1>

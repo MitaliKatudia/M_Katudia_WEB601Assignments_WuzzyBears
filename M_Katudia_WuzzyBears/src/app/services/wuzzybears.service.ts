@@ -10,16 +10,25 @@ import { MessageService } from './message.service';
 })
 export class WuzzyBearsService {
 
+  private httpOptions = {
+    headers: new HttpHeaders({ "Content-Type": "application/json" })
+  }
+
   constructor(private http: HttpClient, private MessageService: MessageService) { }
 
   getTeddys(): Observable<Content[]> {
-    const teddys = contents;
+    // const teddys = contents;
     this.MessageService.add("Content array loaded!");
     return this.http.get<Content[]>("/api/teddys");
   }
 
+  addTeddy(newTeddy: Content): Observable<Content> {
+    this.MessageService.add(`New Teddy Bear added`);
+    return this.http.post<Content>("/api/bikes", newTeddy, this.httpOptions);
+  }
+
   getTeddyById(id: number): Observable<any> {
-    const teddy = contents.find((content: { id: number; }) => content.id === id);
+    const teddy = contents.find(content => content.id === id);
 
     if (teddy) {
       this.MessageService.add(`Content Item at id: ${id}`);
