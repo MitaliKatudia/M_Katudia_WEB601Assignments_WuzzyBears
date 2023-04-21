@@ -11,8 +11,8 @@ export class InMemoryDataService implements InMemoryDbService {
   constructor() { }
 
   createDb() {
-    const bikes: Content[] = contents;
-    return { bikes };
+    const teddys: Content[] = contents;
+    return { teddys };
   }
 
 }

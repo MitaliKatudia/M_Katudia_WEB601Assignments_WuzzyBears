@@ -24,7 +24,7 @@ export class WuzzyBearsService {
 
   addTeddy(newTeddy: Content): Observable<Content> {
     this.MessageService.add(`New Teddy Bear added`);
-    return this.http.post<Content>("/api/bikes", newTeddy, this.httpOptions);
+    return this.http.post<Content>("/api/teddys", newTeddy, this.httpOptions);
   }
 
   getTeddyById(id: number): Observable<any> {
