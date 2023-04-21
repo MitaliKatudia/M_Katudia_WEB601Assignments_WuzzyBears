@@ -11,7 +11,7 @@ import { WuzzyBearsService } from '../services/wuzzybears.service';
 export class ContentDetailComponent {
 
   id: number = 0;
-  content: any = {};
+  teddy: any = {};
   defaultImage: string = '/assets/images/wuzzyBears.jpg';
 
   constructor(private route: ActivatedRoute, private WuzzyBearsService: WuzzyBearsService) { }
@@ -20,8 +20,8 @@ export class ContentDetailComponent {
     this.route.paramMap.subscribe(params => {
       this.id = Number(params.get('id') ?? 0);
 
-      this.WuzzyBearsService.getTeddyById(this.id).subscribe(teddy => {
-        this.content = teddy;
+      this.WuzzyBearsService.getTeddyById(this.id).subscribe(t => {
+        this.teddy = t;
       })
     });
   }
