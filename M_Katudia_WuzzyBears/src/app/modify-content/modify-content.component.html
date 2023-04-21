@@ -4,32 +4,53 @@
     <form class="newTeddyForm" (submit)="addNewTeddy()">
 
       <div>
-        <label for="title">Title:</label> {{newTeddy.title}}
-        <input type="text" id="title" name="title" [(ngModel)]="newTeddy.title">
+        <!--<label for="title">Title:</label> {{newTeddy.title}}
+  <input type="text" id="title" name="title" [(ngModel)]="newTeddy.title">-->
+        <mat-form-field appearance="fill">
+          <mat-label for="title">Title</mat-label>
+          <input matInput type="text" id="title" name="title" [(ngModel)]="newTeddy.title">
+        </mat-form-field>
       </div>
 
       <div>
-        <label for="desc">Description:</label> {{newTeddy.description}}
-        <textarea name="description" id="desc" cols="30" rows="4" [(ngModel)]="newTeddy.description"></textarea>
+        <!--<label for="desc">Description:</label> {{newTeddy.description}}
+        <textarea name="description" id="desc" cols="30" rows="4" [(ngModel)]="newTeddy.description"></textarea>-->
+        <mat-form-field>
+          <mat-label for="desc">Description</mat-label>
+          <textarea matInput name="description" id="desc" cols="35" rows="3" [(ngModel)]="newTeddy.description"></textarea>
+        </mat-form-field>
       </div>
 
       <div>
-        <label for="creator">Creator:</label> {{newTeddy.creator}}
-        <input type="text" id="creator" name="creator" [(ngModel)]="newTeddy.creator">
+        <!--<label for="creator">Creator:</label> {{newTeddy.creator}}
+  <input type="text" id="creator" name="creator" [(ngModel)]="newTeddy.creator">-->
+        <mat-form-field>
+          <mat-label for="creator">Creator</mat-label>
+          <input matInput type="text" id="creator" name="creator" [(ngModel)]="newTeddy.creator">
+        </mat-form-field>
       </div>
 
       <div>
-        <label for="type">Type:</label>
-        <input type="text" id="type" name="type" [(ngModel)]="newTeddy.type">
+        <!--<label for="type">Type:</label>
+  <input type="text" id="type" name="type" [(ngModel)]="newTeddy.type">-->
+        <mat-form-field>
+          <mat-label for="type">Type</mat-label>
+          <input matInput type="text" id="type" name="type" [(ngModel)]="newTeddy.type">
+        </mat-form-field>
       </div>
 
       <div>
-        <label for="img">Image Url:</label>
-        <input type="text" id="img" name="img" [(ngModel)]="newTeddy.imgURL">
+        <!--<label for="img">Image Url:</label>
+  <input type="text" id="img" name="img" [(ngModel)]="newTeddy.imgURL">-->
+        <mat-form-field>
+          <mat-label for="img">Image Url</mat-label>
+          <input matInput type="text" id="img" name="img" [(ngModel)]="newTeddy.imgURL">
+        </mat-form-field>
       </div>
 
       <div class="addBtn">
-        <button type="submit">Add TeddyBears</button>
+        <!--<button type="submit">Add TeddyBears</button>-->
+        <button mat-raised-button color="primary" type="submit">Add New Wuzzy Bear</button>
       </div>
     </form>
   </div>

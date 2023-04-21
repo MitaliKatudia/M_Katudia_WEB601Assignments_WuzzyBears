@@ -10,7 +10,7 @@ import { WuzzyBearsService } from './services/wuzzybears.service';
 })
 export class AppComponent {
   title = 'Wuzzy Bears Factory';
-  teddyId: number = 8;
+  teddyId: number = 4;
   oneTeddyById: any = {};
 
   constructor(private WuzzyBearsService: WuzzyBearsService) { }
