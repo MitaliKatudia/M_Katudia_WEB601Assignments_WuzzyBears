@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Content } from './helper-files/content-interface';
+import { MessageService } from './services/message.service';
+import { WuzzyBearsService } from './services/wuzzybears.service';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +9,21 @@ import { Content } from './helper-files/content-interface';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'M_Katudia_WuzzyBears';
-  contentArray: Content[] = [];
+  title = 'Wuzzy Bears Factory';
+  teddyId: number = 8;
+  oneTeddyById: any = {};
+
+  constructor(private WuzzyBearsService: WuzzyBearsService) { }
+
+  ngOnInit() {
+    this.findBikeById();
+  }
+
+  findBikeById() {
+    this.WuzzyBearsService.getBikeById(this.teddyId).subscribe(result => {
+      if (typeof result === "object") {
+        this.oneTeddyById = result;
+      }
+    });
+  }
 }

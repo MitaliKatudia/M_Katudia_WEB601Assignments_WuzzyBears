@@ -1,0 +1,24 @@
+<div [id]="bike.id" [ngClass]="['card', class]" appHoverAffect="border">
+
+  <div class="card-img">
+    <div *ngIf="teddy.imgURL; else defaultImage">
+      <img [src]="teddy.imgURL" alt={{teddy.title}} (click)="handleClick(bike)">
+    </div>
+    <ng-template #defaultImage>
+      <img [src]="defaultBike" alt={{teddy.title}} (click)="handleClick(bike)">
+    </ng-template>
+  </div>
+
+  <div class="card-body">
+    <h2>{{teddy.title}}</h2>
+    <p>{{teddy.description}}</p>
+    <p><strong>Creator:</strong> {{teddy.creator}}</p>
+    <p *ngIf="teddy.type" appHoverAffect="underline"><strong>Type:</strong> {{teddy.type}}</p>
+    <p *ngIf="teddy.tags">
+      <strong>Tags:</strong>
+      <span *ngFor="let tag of teddy.tags" appHoverAffect="bold">
+        {{tag}},
+      </span>
+    </p>
+  </div>
+</div>
