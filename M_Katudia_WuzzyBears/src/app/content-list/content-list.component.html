@@ -29,7 +29,7 @@
 <br />
 
 <h1 appHoverAffect="underline" style="padding: 20px; padding-left:550px; margin: 20px; font-size:60px;
-  background-color: beige; color: floralwhite;">
+  background-color: beige; color: black;">
   Type : No Type
 </h1>
 
@@ -38,7 +38,7 @@
       *ngFor="let content of contentArray | contentList: ''">
 
     <div class="content-card" style="width: 70%; padding: 10px; margin: 10px; border-radius: 10%;
-      text-align: center; background-color: beige; color: blanchedalmond; margin-bottom: 50px; ">
+      text-align: center; background-color: beige; color: black; margin-bottom: 50px; ">
 
       <h1 class="content-card-header" style="font-size:50px">
         {{content.title}}
@@ -49,7 +49,7 @@
         <p>
           <img *ngIf="content.imgURL; else defaultURL" [src]="content.imgURL" alt="content image" style="width: 70%; border-radius: 10%;" />
           <ng-template #defaultURL>
-            <img src="https://www.dreamstime.com/havanese-four-teddy-bears-sitting-sisal-box-havanese-puppy-cuddling-four-teddy-bears-sit-together-sisal-box-image169682799"
+            <img src="https://images.unsplash.com/photo-1613339038444-ca6b1e8eb7b4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGx1c2h8ZW58MHx8MHx8&w=1000&q=80"
                  alt="default image" style="width: 70%; border-radius: 10%;" />
           </ng-template>
         </p>
@@ -77,16 +77,16 @@
 
 
 <h1 appHoverAffect="underline" style="padding: 20px; padding-left: 550px; margin: 20px; font-size: 60px;
-  background-color: beige; color: floralwhite; ">
+  background-color: bisque; color: black; ">
   Type: Fantacy
 </h1>
 
 <ul style="padding-left:300px">
   <li style="list-style-type: none; font-family:'Times New Roman', Times, serif"
-      *ngFor="let content of contentArray | contentList: 'WuzzyBears'">
+      *ngFor="let content of contentArray | contentList: 'Silk'">
 
     <div class="content-card" style="width: 70%; padding: 10px; margin: 10px; border-radius: 10%;
-      text-align: center; background-color: bisque; color: beige; margin-bottom: 50px; ">
+      text-align: center; background-color: bisque; color: black; margin-bottom: 50px; ">
 
       <h1 class="content-card-header" style="font-size:50px">
         {{content.title}}
@@ -97,7 +97,7 @@
         <p>
           <img *ngIf="content.imgURL; else defaultURL" [src]="content.imgURL" alt="content image" style="width: 70%; border-radius: 10%;" />
           <ng-template #defaultURL>
-            <img src=""
+            <img src="https://images.unsplash.com/photo-1588090644556-14707d0e886a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
                  alt="default image" style="width: 70%; border-radius: 10%;" />
           </ng-template>
         </p>
