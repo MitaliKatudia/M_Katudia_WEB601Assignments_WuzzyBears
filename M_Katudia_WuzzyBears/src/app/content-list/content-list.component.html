@@ -1,36 +1,44 @@
 <main>
-  <section class="searchForTitle">
-    <div>
-      <input type="text" [(ngModel)]="searchTitle" placeholder="Search Title">
-      <button (click)="searchByTitle()">Search</button>
-    </div>
 
-    <div *ngIf="titleFound !== null">
-      <p [style.color]="titleFound ? 'green' : 'crimson'">
-        {{titleFound ? 'Teddy Bear Found' : 'Teddy Bear not found'}}
-      </p>
-    </div>
-  </section>
+  <h1 style="padding: 20px; margin: 20px; background-color: lavenderblush; color: darkblue;">
+    <section class="searchForTitle">
+      <div>
+        <input type="text" [(ngModel)]="searchTitle" placeholder="Search Title here...">
+        <button (click)="searchByTitle()">Search</button>
+      </div>
+      <section class="searchForTitle">
+        <div>
+          <input type="text" [(ngModel)]="searchTitle" placeholder="Search Title">
+          <button (click)="searchByTitle()">Search</button>
+        </div>
+
+        <div *ngIf="titleFound !== null">
+          <p [style.color]="titleFound ? 'green' : 'crimson'">
+            {{titleFound ? 'Teddy Bear Found' : 'Teddy Bear not found'}}
+          </p>
+        </div>
+      </section>
+      </h1>
 
 
-  <h1>Wuzzy Bears with no type</h1>
-  <section class="cards">
-    <div *ngFor="let content of contents | contentType" appHoverAffect="border">
-      <app-content-card [teddy]="content" [class]="'noContentType'"></app-content-card>
-    </div>
-  </section>
+      <h1>Wuzzy Bears: No type</h1>
+      <section class="cards">
+        <div *ngFor="let content of contents | contentType" appHoverAffect="border">
+          <app-content-card [teddy]="content" [class]="'noContentType'"></app-content-card>
+        </div>
+      </section>
 
-  <h1>Silk Wuzzy Bears</h1>
-  <section class="cards">
-    <div *ngFor="let content of contents | contentType:'Silk'" appHoverAffect="border">
-      <app-content-card [teddy]="content" [class]="'silk'"></app-content-card>
-    </div>
-  </section>
+      <h1>Wuzzy Bears: SIlk Type</h1>
+      <section class="cards">
+        <div *ngFor="let content of contents | contentType:'Silk'" appHoverAffect="border">
+          <app-content-card [teddy]="content" [class]="'silk'"></app-content-card>
+        </div>
+      </section>
 
-  <h1>Fantasy Wuzzy Bears</h1>
-  <section class="cards">
-    <div *ngFor="let content of contents | contentType:'Fantasy'" appHoverAffect="border">
-      <app-content-card [teddy]="content" [class]="'fantasy'"></app-content-card>
-    </div>
-  </section>
+      <h1>Wuzzy Bears: Fantasy Type</h1>
+      <section class="cards">
+        <div *ngFor="let content of contents | contentType:'Fantasy'" appHoverAffect="border">
+          <app-content-card [teddy]="content" [class]="'fantasy'"></app-content-card>
+        </div>
+      </section>
 </main>

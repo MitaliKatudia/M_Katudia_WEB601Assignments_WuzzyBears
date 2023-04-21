@@ -12,9 +12,9 @@ export class WuzzyBearsService {
   constructor(private MessageService: MessageService) { }
 
   getTeddys(): Observable<Content[]> {
-    const bikes = contents;
+    const teddys = contents;
     this.MessageService.add("Content array loaded!");
-    return of(bikes);
+    return of(teddys);
   }
 
   getTeddyById(id: number): Observable<any> {

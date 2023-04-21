@@ -1,3 +1,5 @@
+
+
 <div [id]="teddy.id" [ngClass]="['card', class]" appHoverAffect="border">
 
   <div class="card-img">
@@ -5,7 +7,7 @@
       <img [src]="teddy.imgURL" alt={{teddy.title}} (click)="handleClick(teddy)">
     </div>
     <ng-template #defaultImage>
-      <img [src]="teddy.imgURL" alt={{teddy.title}} (click)="handleClick(teddy)">
+      <img [src]="defaultImage" alt={{teddy.title}} (click)="handleClick(teddy)">
     </ng-template>
   </div>
 

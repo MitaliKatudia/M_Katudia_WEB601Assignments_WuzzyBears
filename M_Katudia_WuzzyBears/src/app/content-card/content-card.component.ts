@@ -9,7 +9,7 @@ import { Content } from '../helper-files/content-interface';
 export class ContentCardComponent {
   @Input() teddy: any;
   @Input() class: string = '';
-  defaultTeddy: string = '';
+  defaultImage: string = '/assets/images/wuzzyBears.jpg';
 
   handleClick(content: Content) {
     console.log(`ID: ${content.id}, Title: ${content.title}`);

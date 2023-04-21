@@ -16,10 +16,10 @@ export class AppComponent {
   constructor(private WuzzyBearsService: WuzzyBearsService) { }
 
   ngOnInit() {
-    this.findBikeById();
+    this.findTeddyById();
   }
 
-  findBikeById() {
+  findTeddyById() {
     this.WuzzyBearsService.getTeddyById(this.teddyId).subscribe(result => {
       if (typeof result === "object") {
         this.oneTeddyById = result;
