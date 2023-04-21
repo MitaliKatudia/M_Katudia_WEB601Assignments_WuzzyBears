@@ -8,11 +8,11 @@ import { contents } from '../helper-files/ContentDb';
 })
 export class InMemoryDataService implements InMemoryDbService {
 
-  constructor() {
-    createDb()
-    {
-      const teddys: Content[] = contents;
-      return { teddys };
-    }
+  constructor() { }
+
+  createDb() {
+    const bikes: Content[] = contents;
+    return { bikes };
   }
+
 }
