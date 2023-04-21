@@ -1,9 +1,10 @@
 .newTeddy-Section {
   margin-bottom: 16px;
   padding: 16px 0px;
+  text-align: center;
   background-color: lightskyblue;
 
-  & > div {
+  /*& > div {
     margin: auto;
     max-width: 1100px;
   }
@@ -37,7 +38,7 @@
 
     div {
       margin: 16px 0px;
-    }
+    }*/
 /*
     .addBtn button {
       color: bisque;
@@ -52,11 +53,11 @@
         background-color: #fff;
       }
     }*/
-  }
+  /*}
 
   .errMsg {
     color: crimson;
     text-align: center;
     margin-bottom: 16px;
-  }
+  }*/
 }

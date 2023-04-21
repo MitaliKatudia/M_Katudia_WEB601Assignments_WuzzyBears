@@ -1,26 +1,34 @@
 
 
-<div [id]="teddy.id" [ngClass]="['card', class]" appHoverAffect="border">
+  <mat-card [id]="teddy.id" [ngClass]="['card', class]" appHoverAffect="border">
+    <mat-card-header [matTooltip]="bike.title" [matTooltipPosition]="'above'">
+      <div class="card-img">
+        <div *ngIf="teddy.imgURL; else defaultImage">
+          <img mat-card-image [src]="teddy.imgURL" alt={{teddy.title}} (click)="handleClick(teddy)">
+        </div>
+        <ng-template #defaultImage>
+          <img mat-card-image [src]="defaultImage" alt={{teddy.title}} (click)="handleClick(teddy)">
+        </ng-template>
+      </div>
+    </mat-card-header>
 
-  <div class="card-img">
-    <div *ngIf="teddy.imgURL; else defaultImage">
-      <img [src]="teddy.imgURL" alt={{teddy.title}} (click)="handleClick(teddy)">
-    </div>
-    <ng-template #defaultImage>
-      <img [src]="defaultImage" alt={{teddy.title}} (click)="handleClick(teddy)">
-    </ng-template>
-  </div>
+   
+      <mat-card-content class="card-body">
+        <h2>{{teddy.title}}</h2>
+        <p>{{teddy.description}}</p>
+        <p><strong>Creator:</strong> {{teddy.creator}}</p>
+      </mat-card-content>
 
-  <div class="card-body">
-    <h2>{{teddy.title}}</h2>
-    <p>{{teddy.description}}</p>
-    <p><strong>Creator:</strong> {{teddy.creator}}</p>
-    <p *ngIf="teddy.type" appHoverAffect="underline"><strong>Type:</strong> {{teddy.type}}</p>
-    <p *ngIf="teddy.tags">
-      <strong>Tags:</strong>
-      <span *ngFor="let tag of teddy.tags" appHoverAffect="bold">
-        {{tag}},
-      </span>
-    </p>
-  </div>
-</div>
+      <mat-card-footer>
+        <h2>{{teddy.title}}</h2>
+        <p>{{teddy.description}}</p>
+        <p><strong>Creator:</strong> {{teddy.creator}}</p>
+        <p *ngIf="teddy.type" appHoverAffect="underline"><strong>Type:</strong> {{teddy.type}}</p>
+        <p *ngIf="teddy.tags">
+          <strong>Tags:</strong>
+          <span *ngFor="let tag of teddy.tags" appHoverAffect="bold">
+            {{tag}},
+          </span>
+        </p>
+        </mat-card-footer>
+

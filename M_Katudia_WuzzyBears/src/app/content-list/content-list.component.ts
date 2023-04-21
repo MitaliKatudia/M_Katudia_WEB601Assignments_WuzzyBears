@@ -31,7 +31,7 @@ export class ContentListComponent {
 
   searchByTitle() {
     const teddyBears = this.contents.find(teddy => teddy.title.toLowerCase() === this.searchTitle.toLowerCase());
-    const cardElements = document.querySelectorAll(`div.card`);
+    const cardElements = document.querySelectorAll(`.card`);
 
     if (teddyBears) {
       this.titleFound = true;

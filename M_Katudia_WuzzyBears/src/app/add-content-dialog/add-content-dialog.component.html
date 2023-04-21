@@ -50,8 +50,10 @@
 
       <div class="addBtn">
         <mat-dialog-actions>
-          <button mat-raised-button mat-dialog-close color="accent">close</button>
-          <button mat-raised-button color="primary" [mat-dialog-close]="newBike" type="submit">Add Teddy Bear</button>
+          <button mat-raised-button mat-dialog-close color="accent">close <mat-icon>close</mat-icon></button>
+          <button mat-raised-button color="primary" [mat-dialog-close]="newTeddy" type="submit">
+            Add Teddy Bear <mat-icon>add</mat-icon>
+          </button>
         </mat-dialog-actions>
       </div>
     </form>
